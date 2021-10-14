@@ -349,22 +349,22 @@ forever(function () {
     if (info.score() >= 10) {
         if (create_enemy == 1) {
             mySprite3 = sprites.create(img`
-                . . . . f f f f f . . . . . . . 
-                . . . f 7 7 7 7 7 f . . . . . . 
-                . . f 6 6 6 6 7 7 7 f . . . . . 
-                . f 6 2 6 6 2 6 7 7 f f . . . . 
-                . f 6 2 6 6 2 6 7 7 6 6 f . . . 
-                f 6 8 8 6 6 6 6 7 7 f 6 f . . . 
-                f 6 6 6 6 f 6 6 7 7 f 6 f . f f 
-                f f f f f 6 6 6 7 7 f f . f 7 f 
-                . f 6 6 6 6 6 7 7 f f . . f 7 f 
-                . . f f f f f 7 7 7 7 f . f 7 f 
-                . . . . f 7 7 7 7 7 7 7 f f 7 f 
-                . . . f 7 f f 7 f 7 7 7 7 f f . 
-                . . . f 7 f f 7 f 7 7 7 7 f . . 
-                . . . f 6 8 f 6 8 f f 7 f . . . 
-                . . . f 6 6 8 6 6 8 8 6 f . . . 
-                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . b 5 b . . . 
+                . . . . . . . . . b 5 b . . . . 
+                . . . . . . . . . b c . . . . . 
+                . . . . . . b b b b b b . . . . 
+                . . . . . b b 5 5 5 5 5 b . . . 
+                . . . . b b 5 2 2 5 5 5 d 2 . . 
+                . . . . b 5 5 2 2 5 5 d 4 c . . 
+                . . . . b 5 5 5 5 5 d d 4 4 . . 
+                b d d d b b d 5 5 5 4 4 4 4 4 b 
+                b b d 5 5 5 b 5 5 4 4 4 4 4 b . 
+                b d c 5 5 5 5 d 5 5 5 5 5 b . . 
+                c d d c d 5 5 b 5 5 5 5 5 5 b . 
+                c b d d c c b 5 5 5 5 5 5 5 b . 
+                . c d d d d d d 5 5 5 5 5 d b . 
+                . . c b d d d d d 5 5 5 b b . . 
+                . . . c c c c c c c c b b . . . 
                 `, SpriteKind.Enemy)
             create_enemy = 0
         }
