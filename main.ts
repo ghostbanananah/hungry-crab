@@ -75,12 +75,6 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     true
     )
 })
-controller.right.onEvent(ControllerButtonEvent.Released, function () {
-	
-})
-controller.left.onEvent(ControllerButtonEvent.Released, function () {
-	
-})
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.stopAnimation(animation.AnimationTypes.All, mySprite)
     animation.runImageAnimation(
@@ -163,24 +157,24 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     info.changeScoreBy(1)
     mySprite2.destroy()
     mySprite2 = sprites.create(img`
-        . . . . . . . e e e e . . . . . 
-        . . . . . e e 4 5 5 5 e e . . . 
-        . . . . e 4 5 6 2 2 7 6 6 e . . 
-        . . . e 5 6 6 7 2 2 6 4 4 4 e . 
-        . . e 5 2 2 7 6 6 4 5 5 5 5 4 . 
-        . e 5 6 2 2 8 8 5 5 5 5 5 4 5 4 
-        . e 5 6 7 7 8 5 4 5 4 5 5 5 5 4 
-        e 4 5 8 6 6 5 5 5 5 5 5 4 5 5 4 
-        e 5 c e 8 5 5 5 4 5 5 5 5 5 5 4 
-        e 5 c c e 5 4 5 5 5 4 5 5 5 e . 
-        e 5 c c 5 5 5 5 5 5 5 5 4 e . . 
-        e 5 e c 5 4 5 4 5 5 5 e e . . . 
-        e 5 e e 5 5 5 5 5 4 e . . . . . 
-        4 5 4 e 5 5 5 5 e e . . . . . . 
-        . 4 5 4 5 5 4 e . . . . . . . . 
-        . . 4 4 e e e . . . . . . . . . 
+        . . . . . 3 3 b 3 3 d d 3 3 . . 
+        . . . . 3 1 1 d 3 d 1 1 1 1 3 . 
+        . . . 3 d 1 1 1 d 1 1 1 d 3 1 3 
+        . . 3 d d 1 1 1 d d 1 1 1 3 3 3 
+        . 3 1 1 d 1 1 1 1 d d 1 1 b . . 
+        . 3 1 1 1 d 1 1 1 1 1 d 1 1 3 . 
+        . b d 1 1 1 d 1 1 1 1 1 1 1 3 . 
+        . 4 b 1 1 1 1 d d 1 1 1 1 d 3 . 
+        . 4 4 d 1 1 1 1 1 1 d d d b b . 
+        . 4 d b d 1 1 1 1 1 1 1 1 3 . . 
+        4 d d 5 b d 1 1 1 1 1 1 1 3 . . 
+        4 5 d 5 5 b b d 1 1 1 1 d 3 . . 
+        4 5 5 d 5 5 d b b b d d 3 . . . 
+        4 5 5 5 d d d d 4 4 b 3 . . . . 
+        . 4 5 5 5 4 4 4 . . . . . . . . 
+        . . 4 4 4 . . . . . . . . . . . 
         `, SpriteKind.Food)
-    mySprite2.setPosition(randint(0, 160), randint(0, 120))
+    mySprite2.setPosition(randint(5, 155), randint(5, 115))
 })
 let mySprite2: Sprite = null
 let mySprite: Sprite = null
@@ -329,20 +323,20 @@ controller.moveSprite(mySprite, 80, 80)
 mySprite.setStayInScreen(true)
 info.startCountdown(4)
 mySprite2 = sprites.create(img`
-    . . . . . . . e e e e . . . . . 
-    . . . . . e e 4 5 5 5 e e . . . 
-    . . . . e 4 5 6 2 2 7 6 6 e . . 
-    . . . e 5 6 6 7 2 2 6 4 4 4 e . 
-    . . e 5 2 2 7 6 6 4 5 5 5 5 4 . 
-    . e 5 6 2 2 8 8 5 5 5 5 5 4 5 4 
-    . e 5 6 7 7 8 5 4 5 4 5 5 5 5 4 
-    e 4 5 8 6 6 5 5 5 5 5 5 4 5 5 4 
-    e 5 c e 8 5 5 5 4 5 5 5 5 5 5 4 
-    e 5 c c e 5 4 5 5 5 4 5 5 5 e . 
-    e 5 c c 5 5 5 5 5 5 5 5 4 e . . 
-    e 5 e c 5 4 5 4 5 5 5 e e . . . 
-    e 5 e e 5 5 5 5 5 4 e . . . . . 
-    4 5 4 e 5 5 5 5 e e . . . . . . 
-    . 4 5 4 5 5 4 e . . . . . . . . 
-    . . 4 4 e e e . . . . . . . . . 
+    . . . . . 3 3 b 3 3 d d 3 3 . . 
+    . . . . 3 1 1 d 3 d 1 1 1 1 3 . 
+    . . . 3 d 1 1 1 d 1 1 1 d 3 1 3 
+    . . 3 d d 1 1 1 d d 1 1 1 3 3 3 
+    . 3 1 1 d 1 1 1 1 d d 1 1 b . . 
+    . 3 1 1 1 d 1 1 1 1 1 d 1 1 3 . 
+    . b d 1 1 1 d 1 1 1 1 1 1 1 3 . 
+    . 4 b 1 1 1 1 d d 1 1 1 1 d 3 . 
+    . 4 4 d 1 1 1 1 1 1 d d d b b . 
+    . 4 d b d 1 1 1 1 1 1 1 1 3 . . 
+    4 d d 5 b d 1 1 1 1 1 1 1 3 . . 
+    4 5 d 5 5 b b d 1 1 1 1 d 3 . . 
+    4 5 5 d 5 5 d b b b d d 3 . . . 
+    4 5 5 5 d d d d 4 4 b 3 . . . . 
+    . 4 5 5 5 4 4 4 . . . . . . . . 
+    . . 4 4 4 . . . . . . . . . . . 
     `, SpriteKind.Food)
