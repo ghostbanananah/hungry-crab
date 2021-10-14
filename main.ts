@@ -176,6 +176,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
         `, SpriteKind.Food)
     mySprite2.setPosition(randint(5, 155), randint(5, 115))
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    game.over(false)
+})
+let mySprite3: Sprite = null
 let mySprite2: Sprite = null
 let mySprite: Sprite = null
 info.setScore(0)
@@ -340,3 +344,31 @@ mySprite2 = sprites.create(img`
     . 4 5 5 5 4 4 4 . . . . . . . . 
     . . 4 4 4 . . . . . . . . . . . 
     `, SpriteKind.Food)
+let create_enemy = 1
+forever(function () {
+    if (info.score() >= 10) {
+        if (create_enemy == 1) {
+            mySprite3 = sprites.create(img`
+                . . . . f f f f f . . . . . . . 
+                . . . f 7 7 7 7 7 f . . . . . . 
+                . . f 6 6 6 6 7 7 7 f . . . . . 
+                . f 6 2 6 6 2 6 7 7 f f . . . . 
+                . f 6 2 6 6 2 6 7 7 6 6 f . . . 
+                f 6 8 8 6 6 6 6 7 7 f 6 f . . . 
+                f 6 6 6 6 f 6 6 7 7 f 6 f . f f 
+                f f f f f 6 6 6 7 7 f f . f 7 f 
+                . f 6 6 6 6 6 7 7 f f . . f 7 f 
+                . . f f f f f 7 7 7 7 f . f 7 f 
+                . . . . f 7 7 7 7 7 7 7 f f 7 f 
+                . . . f 7 f f 7 f 7 7 7 7 f f . 
+                . . . f 7 f f 7 f 7 7 7 7 f . . 
+                . . . f 6 8 f 6 8 f f 7 f . . . 
+                . . . f 6 6 8 6 6 8 8 6 f . . . 
+                . . . . f f f f f f f f f . . . 
+                `, SpriteKind.Enemy)
+            create_enemy = 0
+        }
+        mySprite3.setBounceOnWall(true)
+        mySprite3.setVelocity(randint(-100, 100), randint(-100, 100))
+    }
+})
